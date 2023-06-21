@@ -1,5 +1,4 @@
-# Load required libraries
-#install.packages("DT")
+#Loading Required Libraries
 
 library(shiny)
 library(shinydashboard)
@@ -12,8 +11,7 @@ library(dplyr)
 require("RColorBrewer")
 
 
-# Read database credentials
-# source("./03_shiny_HW1/credentials_v3.R")
+# Reading database credentials
 source("./credentials_v4.R")
 
 
@@ -21,7 +19,7 @@ ui <- dashboardPage( skin = 'purple',
   dashboardHeader(title = "Sales Dashboard", titleWidth  = 200 ),
   #Sidebar content
   dashboardSidebar( width = 200,
-    #Add sidebar menus here
+    #sidebar menus 
     sidebarMenu(
       menuItem("Description", tabName = "Welcome", icon = icon("fa-sharp fa-solid fa-magnifying-glass")),
       menuItem("Add new sales", tabName = "newsales", icon = icon("fa-solid fa-handshake")),
@@ -33,7 +31,7 @@ ui <- dashboardPage( skin = 'purple',
   
   dashboardBody(
     tabItems(
-      # Add contents for first tab
+      #Contents for first tab
       tabItem(tabName = "Welcome",
               h2("Real time performance tracking dashboard!"),
               h3(""),
@@ -68,7 +66,7 @@ ui <- dashboardPage( skin = 'purple',
               
               
       ),
-      # Add contents for second tab
+      #Contents for second tab
       tabItem(tabName = "newsales", 
               fluidPage(
                 h2("Add New Sales!"),
@@ -141,7 +139,7 @@ ui <- dashboardPage( skin = 'purple',
       #---------------------------End of New Sales UI----------------------------    
       
       
-      #  Add contents for third tab
+      #Contents for third tab
       tabItem(tabName = "Market_Analytics",
               fluidPage(
                 tabBox( width = '100px',
